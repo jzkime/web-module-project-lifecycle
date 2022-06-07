@@ -71,7 +71,9 @@ export default class App extends React.Component {
   render() {
     return(
       <>
+      {!this.state.todos.length ? <h2>Loading...</h2> : 
         <TodoList todos={this.state.todos} toggle={this.toggleComplete} hide={this.state.hide}/>
+      }
         <Form add={this.formAdd} hide={this.hideComplete} hidden={this.state.hide} clear={this.clearHandler} />
       </>
     )
